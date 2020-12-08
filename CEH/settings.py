@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'li#m#gy6#q*dy=-a^k$2j6l5ch8av^i=*=!l(z)b!xe@a)nm@z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cehhospital.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'posts.apps.PostsConfig',
     'django.contrib.humanize',
     'users.apps.UsersConfig',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -129,6 +130,18 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+
+AWS_ACCESS_KEY_ID =  'AKIAXLOLEO6NGRNIXBHE'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'cehhospital'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_QUERYSTRING_AUTH=False
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
