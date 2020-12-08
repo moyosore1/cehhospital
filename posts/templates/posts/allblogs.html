@@ -1,0 +1,69 @@
+{% extends 'posts/base_template.html' %}
+{% load static %}
+{% block css %} <link rel="stylesheet" type="text/css" href="{% static 'css/all-blogs.css' %}">{% endblock css %}
+{% load humanize %}
+<!--end Navigation-->
+{% block content%}
+   
+  <!--landing-->
+    <div class="landing ftco-animate">
+      <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'Post-home' %}">Home <i class="fas fa-chevron-right"></i></a></span> <span>Blog <i class="fas fa-chevron-right"></i></span></p>
+      <h1 class="bread">Our Blog</h1>
+    </div>
+  <!--end home-->
+
+  <!--recent blog-->
+  <section class="recent-blog blog section" id="blog">
+    <div class="container">
+      
+      <div class="row justify-content-center mb-2 pb-2">
+        <div class="col-md-7 heading-section--recent-blog text-center ftco-animate">
+          <h2>Recent Blog</h2>
+        </div>
+      </div>
+      
+      <div class="row d-flex">
+          {% for post in posts %}
+            <div class="col-md-4 d-flex ftco-animate blog-blocks">
+              <div class="recent-blog-entry align-self-stretch">
+                <a href="blog-diabetes.html" class="" ><img src="{{ post.post_image.url}}" alt="" class="rounded block-20--recent-blog "></a>'
+                <div class="text--recent-blog mt-3 text-center">
+                  <div class="meta mb-2">
+                    <div><a href="#">{{ post.date_added|naturaltime}}</a></div>
+                    <div><a href="#" class="meta-chat"><span class="far fa-comment-dots"></span>{{post.get_number_of_comments}}</a></div>
+                  </div>
+                  <h3 class="heading--recent-blog"><a href="{{ post.get_absolute_url }}">{{ post.post_title}}</a></h3>
+                </div>
+              </div> 
+            </div>       
+          {% endfor %}     
+
+      </div>
+      
+      <div class="row mt-5">
+        <div class="col text-center">
+          <div class="block-27">
+            <ul>
+              <li><a href="#">&lt;</a></li>
+              <li class="active"><span>1</span></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">&gt;</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+  <!--end of recent blog-->
+
+  </section>
+<!--end of recent blog-->
+{% endblock %}
+
+
+

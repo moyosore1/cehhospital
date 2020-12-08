@@ -1,0 +1,605 @@
+  {% extends 'posts/base_template.html'%}
+  {% load static %}
+  {% block css %} <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">{% endblock css %}
+
+    {% block content%}
+    
+
+    <div class="landing ftco-animate">
+      <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'Post-home' %}">Home <i class="fas fa-chevron-right"></i></a></span> <span>About us <i class="fas fa-chevron-right"></i></span></p>
+      <h1 class="bread ">About Us</h1>
+    </div>
+
+  <!--end home-->
+
+
+  <!--About -->
+  <section id="about" class="about-section">
+        <div class="row d-flex no-gutters ">
+          <div class="col-md-6 about-pictures d-flex ftco-animate">
+                <img src="{% static 'img/building/building (16).jpg' %}" alt="" class="about-img">
+            </div>
+
+            <div class="col-md-6 pl-md-5">
+                  
+              <div class="ftco-animate">
+                <h3 class="subheading--about ">Centre for Innovations in Eye Care Health</h3>
+                <h2 id="OurDeclaration">Our Declaration, Our Pact with Nigerians.</h2>
+                <p>We shall not be limited by traditions. We shall breakdown existing barriers and bring modern technology to bear through our Centre for Innovations in Eye Care. </p>
+                
+              </div>
+              
+              <div id="tab-mission&vision" class="tab--about">
+                <button class="tablinks--about" onclick="openCity(event, 'OurMission')"><a>Our Mission</a> </button>
+                <button class="tablinks--about" onclick="openCity(event, 'OurVision')"><a>Our Vision</a> </button>
+                <!-- <button class="tablinks--about" onclick="openCity(event, 'OurValues')"><a>Our Values</a> </button> -->
+              </div>
+              
+              <div id="OurMission" class="tabcontent--about">
+
+                <p>A centre that will provide an uninterrupted qualitative, affordable, accessible and efficient eye care services for all who seek help with compassion and love irrespective of socio- economic status, race or creed; provide high quality clinical and surgical services for residency and short term fellowship training; deliver sustainable, comprehensive eye care services through promotive, curative and preventive eye care practice, and an alternative platform for training of eye care team that focuses not only on the cognitive and skill, but also an attitude, effective outreach programmes reaching out to the neglected and underprivileged people and operational research and innovation for the improvement of eye care in the country.</p>
+              </div>
+              
+              <div id="OurVision" class="tabcontent--about">
+
+                <p>Our Vision at Eleta Eye Institute Group 
+                  To become the leading and best eye care provider on the African continent that will demonstrate excellence in service, in training, in research and a strong commitment to innovation for the improvement of eye care for the benefit of humanity and the greater glory of God. 
+                </p> 
+              </div>
+              
+              <!-- <div id="OurValues" class="tabcontent--about">
+
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+              </div>
+                -->
+
+          </div>
+      </div>
+  </section>
+  <!-- end About -->
+
+
+  <!--gallery-->
+  <section  class="ftco-section ftco-no-pt ftco-no-pb" id="gallery">
+    
+    <div class="gallery-heading ftco-animate">
+      <h3>Gallery</h3>
+      <div class="gallery-underline"></div>
+    </div>
+
+    <div class="row p-4 mb-5 no-gutters">
+
+      <div class="col-sm-6 col-md-3 ftco-animate">
+        <img  src="{% static 'img\facilities\facilities (2).jpg' %}" class="work--gallery">
+        <button type="button" class="icon--gallery" data-toggle="modal" data-target="#gallery-modal"><span class="fas fa-expand"></span></button>
+        <h4 class="text--gallery">Facilities</h4>
+      </div>
+      
+      <div class="col-sm-6 col-md-3 ftco-animate">
+        <img  src="{% static 'img\team\team (2).jpg' %}" class="work--gallery">
+        <button type="button" class="icon--gallery" data-toggle="modal" data-target="#gallery-modal"><span class="fas fa-expand"></span></button>
+        <h4 class="text--gallery">Staff</h4>
+      </div>      
+      
+      <div class="col-sm-6 col-md-3 ftco-animate">
+        <img  src="{% static 'img\equipment\equipment (16).jpg' %}" class="work--gallery">
+        <button type="button" class="icon--gallery" data-toggle="modal" data-target="#gallery-modal"><span class="fas fa-expand"></span></button>
+        <h4 class="text--gallery">Equipment</h4>
+      </div>
+
+      <div class="col-sm-6 col-md-3 ftco-animate">
+        <img  src="{% static 'img\building\building (4).jpg' %}" class="work--gallery">
+        <button type="button" class="icon--gallery" data-toggle="modal" data-target="#gallery-modal"><span class="fas fa-expand"></span></button>
+        <h4 class="text--gallery">Activities</h4>
+      </div>
+
+    </div>
+  
+        <!-- The Modal -->
+    <div class="modal ftco-animate" id="gallery-modal">
+
+          <span class="close cursor" onclick="closeModal()">&times;</span>
+          <div class="modal-content">
+        
+            <div class="mygallery active">
+              <img src="{% static 'img\building\building (5).jpg' %}" class="modal-img">
+            </div>
+        
+            <div class="mygallery">
+              <img src="{% static 'img\equipment\equipment (11).jpg' %}" class="modal-img">
+            </div>
+        
+            <div class="mygallery">
+              <img src="{% static 'img\team\team (3).jpg' %}" class="modal-img">
+            </div>
+        
+            <div class="mygallery">
+              <img src="{% static 'img\facilities\facilities (2).jpg' %}" class="modal-img">
+            </div>
+        
+        
+            <!-- Next/previous controls -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+            <!-- Caption text -->
+            <div class="caption-container">
+              <p class="caption">Building</p>
+            </div>
+        
+            <!-- Thumbnail image controls -->
+            <div class="img-thumbnails">
+           
+              <img class="demo" src="{% static 'img\building\building (5).jpg' %}" onclick="currentSlide(1)">
+           
+              <img class="demo" src="{% static 'img\equipment\equipment (11).jpg' %}" onclick="currentSlide(2)">
+           
+              <img class="demo" src="{% static 'img\team\team (3).jpg' %}" onclick="currentSlide(3)">
+           
+              <img class="demo" src="{% static 'img\facilities\facilities (2).jpg' %}" onclick="currentSlide(4)">
+           
+            </div>
+
+      </div>
+    </div>
+
+  </section> 
+ 
+  
+  <!-- team-->
+
+  <div class="team dark2 section" id="team">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 pb-0 text-center">
+          <span class="sub-title">Meet Our Team</span>
+          <h2 class="team-bold text-black">Our Team</h2>
+          <p>Discover better health & wellness provided by professionals</p>
+        </div>
+      </div>
+      
+      <div id="slider2" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <!--carousel item-->
+            <div class="carousel-item active">
+                <div class="container my-4">
+                    <div class="row text-center">
+                        <div class=" col-12 team-item ">
+                            <!--image-->
+                            <div class="align-self-center ">
+                                <img src="{% static 'img/team/boss (1).jpg' %}" alt="" class="img-fluid-2 team-img">
+                            </div>
+                            <!--text-->
+                            <div class="review-text ">
+                                <h2 class="textcapitalized mb-3 primary-color">Team</h2>
+                                <h5>staff</h5>
+                                <p class="">Even though the golden fish does not hide itself, there is the need for enough publicity of the hospital to other parts of the country. <br> 
+                                  Wishing management and staff the very best! </p>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!--end carousel item-->
+             <!--carousel item-->
+            <div class="carousel-item ">
+              <div class="container my-4">
+                  <div class="row text-center">
+                      <div class=" col-12 team-item ">
+                          <!--image-->
+                          <div class="align-self-center ">
+                              <img src="{% static 'img/team/boss (2).jpg' %}" alt="" class="img-fluid-2 team-img">
+                          </div>
+                          <!--text-->
+                          <div class="review-text ">
+                              <h2 class="textcapitalized mb-3 primary-color">Team</h2>
+                              <h5>staff</h5>
+                              <p class="">Even though the golden fish does not hide itself, there is the need for enough publicity of the hospital to other parts of the country. <br> 
+                                Wishing management and staff the very best! </p>  
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+           <!--end carousel item-->
+           <!--carousel item-->
+           <div class="carousel-item ">
+            <div class="container my-4">
+                <div class="row text-center">
+                    <div class=" col-12 team-item ">
+                        <!--image-->
+                        <div class="align-self-center ">
+                            <img src="{% static 'img/team/team (1).jpg' %}" alt="" class="img-fluid-2 team-img">
+                        </div>
+                        <!--text-->
+                        <div class="review-text ">
+                            <h2 class="textcapitalized mb-3 primary-color">Team</h2>
+                            <h5>staff</h5>
+                            <p class="">Even though the golden fish does not hide itself, there is the need for enough publicity of the hospital to other parts of the country. <br> 
+                              Wishing management and staff the very best! </p>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!--end carousel item-->
+    
+        </div>
+        <!--carousel controls-->
+        <a href="#slider2" class="carousel-control-prev carousel__control--" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+        <a href="#slider2" class="carousel-control-next carousel__control--next" role="button" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+    </div>
+      
+    </div>
+  </div>
+  <!--end of team -->
+
+
+
+  <!--reviews-->
+  <div class="section dark2 py-4 " id="reviews">
+    
+    <div class="container-fluid text-center">
+      <h2 class="team-bold text-black">Reviews</h2>
+      <p  class="text-info">Take a look at the reviews form our grateful patients</p>
+    </div>
+
+    <div id="slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <!--carousel item-->
+            <div class="carousel-item active">
+                <div class="container my-4">
+                    <div class="row text-center">
+                        <div class=" col-12 review-item ">
+                            <!--image-->
+                            <div class="align-self-center ">
+                                <img src="{% static 'img/customers/customer (1).jpg' %}" alt="" class="rounded-circle review-img">
+                            </div>
+                            <!--text-->
+                            <div class="review-text ">
+                                <h2 class="textcapitalized mb-3 primary-color">David Adewole</h2>
+                                <h5>Brain surgeon</h5>
+                                <p class="">Even though the golden fish does not hide itself, there is the need for enough publicity of the hospital to other parts of the country. <br> 
+                                  Wishing management and staff the very best! </p>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!--end carousel item-->
+              <!--carousel item-->
+            <div class="carousel-item ">
+                <div class="container my-4">
+                    <div class="row text-center">
+                        <div class="col-12 review-item ">
+                            <!--image-->
+                            <div class="align-self-center">
+                                <img src="{% static 'img/customers/customer (7).jpg' %}" alt="" class="rounded-circle review-img">
+                            </div>
+                            <!--text-->
+                            <div class="review-text ">
+                                <h2 class="textcapitalized mb-3 primary-color">S.M Okafo</h2>
+                                <h5>Fashion Designer</h5>
+                                <p class="">Just to let you know that I had my first restful night this week yesterday. I feel great and I am in the airport waiting for the flight back to Calabar. I hope to be back on the 2nd of April for stent removal. I cannot thank you enough for giving me a new lease on life. Please extend my thanks to your excellent medical team for their warm hospitality. Best regards. </p>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!--end carousel item-->
+            <!--carousel item-->
+            <div class="carousel-item ">
+              <div class="container my-4">
+                  <div class="row text-center">
+                      <div class="col-12 review-item ">
+                          <!--image-->
+                          <div class="align-self-center">
+                              <img src="{% static 'img/customers/customer (4).jpg' %}" alt="" class="rounded-circle review-img">
+                          </div>
+                          <!--text-->
+                          <div class="review-text ">
+                              <h2 class="textcapitalized mb-3 primary-color">A.Otu</h2>
+                              <h5>UI/UX, Designer</h5>
+                              <p class="">Dr, God Almighty bless you and all members of the Hospital Management.You are all so wonderful. We were discharged around 10.00PM. I am extremely delighted in the way and manner we were treated by all members of your staff, the security inclusive.We thank you and pray that you continue to excel to serve humanity for a very long time. </p>  
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        <!--end carousel item-->
+        </div>
+        <!--carousel controls-->
+        <a href="#slider" class="carousel-control-prev carousel__control--" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+        <a href="#slider" class="carousel-control-next carousel__control--next" role="button" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+    </div>
+  </div>
+  <!--end reviews-->
+
+
+  <!-- facts -->
+  <div class="facts section" id="facts">
+    <div class="fact-text">
+        <h1 class="fact-title">
+            Naked Facts about eye care in Nigeria that you must know.
+         </h1>
+        <ul class="facts-list">
+          <li>
+            <p>
+                There are over 4 million visually impaired adults in Nigeria. About 1.3 million aged
+                40 years and over are BLIND. Another 3.5 million adults are estimated to have
+                moderate to severe visual impairment. (Extrapolated from Nigerian National Survey
+                of Blindness and Low Vision)
+                In real terms, you can imagine 8 out of 10 people living in Oyo State, or half the
+                population of Lagos State or the entire population Ogun State or Osun State being
+                blind or visually impaired!
+            </p>
+          </li>
+          <li>
+            <p>
+                 Cataract is the single commonest cause of blindness and about 750,000 adults are in
+                immediate need of cataract surgery. 
+            </p>
+          </li>
+          <li>
+            <p>
+                There are insufficient numbers of ophthalmologists and eye care facilities for service
+                and training in Nigeria. Patients have to travel distances of between 50 to 400
+                kilometres to access eye care. 
+            </p>
+          </li>
+          <li>
+            <p>
+                A good number of all cataract procedures are still performed by quacks adding to the
+                number of people with irreversible blindness. 
+            </p>
+          </li>
+          
+          <li>
+            <p>
+                <dl>
+                    <dt>Glaucoma is the second leading cause of blindness
+                        But unlike cataract,</dt>
+                    <dd>-  The sufferer has no symptoms until the very late stages; </dd>
+                    <dd>-  It is not easily recognizable in the early stages,</dd>
+                    <dd>-  Difficult to diagnose until damage has begun except by trained medical experts</dd>
+                    <dd>- Blindness is irreversible. </dd>
+                  </dl>
+            </p>
+          </li>
+          <li>
+            <p>
+                Many top business executives live with glaucoma without knowing and when it
+                finally announces its presence to them, it is often too late. 
+            </p>
+          </li>
+          <li>
+            <p>
+                If all the people who would like to know whether they have glaucoma come to
+                hospital it would take the number of ophthalmologists in the country 77years,
+                working 365days in a year to see them. 
+            </p>
+          </li>
+          <li>
+            <p>
+                There are less than 400 active ophthalmologists (eye medical doctors) in the Nigeria
+                and majority are in the Teaching Hospitals and 8 big cities. That means in the event of
+                an emergency, your chances of being attended to by a qualified eye medical doctor
+                outside the big cities are very slim. The poor people and those living in rural areas can
+                consider themselves blind. 
+            </p>
+          </li>
+          <li>
+            <p>
+                Children are likely to go blind with simple diseases such as cataract and infection
+                because they have special needs which are even more difficult to meet. 
+            </p>
+          </li>
+          <li>
+            <p>
+                Nigeria needs about 2000 ophthalmologists and hope of getting any close to this
+                figure is not insight because only about 35 new ophthalmologists pass out of the
+                training programme every year. This is just at replacement level with no room for
+                growth. 
+            </p>
+          </li>
+          <li>
+            <p>
+                Training of Ophthalmologists is done mainly in Federal and State government
+                Teaching Hospitals and in addition the trainees are greatly disadvantaged because of
+                lack of appropriate and up-to-date equipment and low volume of surgical patients
+                which make training impossible at international standards
+            </p>
+          </li>
+          <li>
+            <p>
+                Thus there is need to provide an alternative platforms for comprehensive training of
+                ophthalmologists and other eye care workers that focuses not only on the cognitive
+                and skill, but also on attitude, leadership and work ethics. Many such private
+                initiatives are needed.
+            </p>
+          </li>
+          <li>
+            <p>
+                Research into finding cures for common ailments which afflict us such as glaucoma
+                or finding new ways of solving our peculiar eye care challenges are either
+                rudimentary or non-existent. Thus we are a consumer nation in its entire ramification,
+                depending solely on the outcome of various researches from outside our borders
+                
+            </p>
+          </li>
+        </ul>
+      </div>
+  </div>
+  <!-- end of facts -->
+
+
+  <!--some kinda text-->
+  <section class="section pact-section">
+          <div class="row">
+              <div class="col-md-8">
+                  <h5 class="someKindaText">Your Pact.</h5>
+                  <h4 class="someKindaText">Your first duty is to yourself and members of your immediate family.</h4>
+                  <p>You must promise yourself that you will not inadvertently allow yourself to contribute
+                    to the millions of the blind and visually impaired by ensuring that you and your
+                    family members have an eye examination at least once a year.</p>
+                  <p>Help support the efforts for the Prevention of Blindness and vision loss in Nigeria. <br>
+                    Use your influence to advocate for Prevention of Blindness at formal and informal
+                    gatherings to persuade the authority so that the needs of eye care and prevention of
+                    blindness get the attention it deserves. BREAKFAST MEETINGS, SEMINARS &
+                    WEBINARS</p>
+              </div>
+              <div class="col-md-4">
+                  <p>Work with us to change the policies and practices of institutions, and the attitudes and
+                    behaviours of individuals, whose actions affect the elimination of avoidable blindness.
+                    BREAKFAST MEETINGS, SEMINARS & WEBINARS</p>
+              </div>
+          </div>
+  </section>
+  <!--end-->
+
+
+  <!-- app -->
+  <section id="app" class="app-section section">
+      <div class="row d-flex">
+        <div class="col-md-6 col-lg-5 app-carousel">
+                  <!-- partial:index.partial.html -->
+          <div class="carousel">
+            <ul class="carousel__list">
+
+              <img class="carousel__item" src="{% static 'img/app/app (2).jpg' %}" data-pos="-2" src="" alt="">
+              <img class="carousel__item" src="{% static 'img/app/app (1).jpg' %}" data-pos="-1" src="" alt="">
+              <img class="carousel__item" src="{% static 'img/app/app (2).jpg' %}" data-pos="0" src="" alt="">
+              <img class="carousel__item" src="{% static 'img/app/app (1).jpg' %}" data-pos="1" src="" alt="">
+              <img class="carousel__item" src="{% static 'img/app/app (2).jpg' %}" data-pos="2" src="" alt="">
+
+            </ul>
+          </div>
+      <!-- partial -->
+        </div>
+         <div class="col-md-6 col-lg-5 app-text">
+            <h1 class="app-title">
+                CEH App,
+                <br>
+                Reliable.
+            </h1>
+
+            <div class="app-paragraph">
+              <p>
+                With the CEH app, you'll get fast, simple, tips and easy messaging and calling CEH Doctors for <span>free <sup>*</sup>, availiable for all phones </span>
+              </p>
+            </div>
+            
+            <div class="app-conditions">
+              <sup>*</sup>
+              Data Charges may apply. Contact your service provider for details.
+            </div>
+            
+            <div class="app-list">
+              <ul>
+                <li><a href="comingsoon.html"><img height="50%" width="50%" src="{% static 'img/google-play-badge.png' %}" alt=""></a> <a href="comingsoon.html"><img height="40%" width="40%"  src="{% static 'img/badge-download-on-the-app-store.svg' %}" alt=""></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </section>
+  <!-- end app -->
+
+{% endblock %}
+
+
+<!--some sort of gallery
+<section class="ftco-section ftco-no-pt ftco-no-pb" id="gallery">
+  <div class="container-fluid px-md-0">
+    
+    <div class="gallery-heading ftco-animate ">
+      <h3>Gallery</h3>
+      <div class="gallery-underline"></div>
+    </div>
+
+<div class="row no-gutters">
+  
+  <div class="col-md-4 ftco-animate">
+    {# <div class="work--gallery img--gallery d-flex align-items-end" style="background-image: url('img/building/building (6).jpg');"> #}
+        <a href="{% static 'img/building/building (6).jpg' %}" class="icon--gallery image-popup d-flex justify-content-center align-items-center">
+        <span class="fas fa-expand-alt"></span>
+        </a>
+        <div class="desc w-100 px-4">
+          <div class="text--gallery w-100 mb-3">
+              <span>Building</span>
+              <h2><a href="work-single.html">CEH Building</a></h2>
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 ftco-animate">
+    {# <div class="work--gallery img--gallery d-flex align-items-end" style="background-image: url('img/gallery/gallery (1).jpg');"> #}
+        <a class="icon--gallery image-popup d-flex justify-content-center align-items-center">
+                    <span class="fas fa-expand-alt"></span>
+                </a>
+        <div class="desc w-100 px-4">
+          <div class="text--gallery w-100 mb-3">
+              <span>Building</span>
+              <h2><a>CEH Building</a></h2>
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 ftco-animate">
+    {# <div class="work--gallery img--gallery d-flex align-items-end" style="background-image: url('{% static img/gallery/x.jpg %}');"> #}
+        <a href="{% static 'img/gallery/x.jpg' %}" class="icon--gallery image-popup d-flex justify-content-center align-items-center">
+                    <span class="fas fa-expand-alt"></span>
+                </a>
+        <div class="desc w-100 px-4">
+          <div class="text--gallery w-100 mb-3">
+              <span>Building</span>
+              <h2><a>CEH Building</a></h2>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 ftco-animate">
+    {# <div class="work--gallery img--gallery d-flex align-items-end" style="background-image: url('{% static img/gallery/gallery (3).jpg %}');"> #}
+        <a href="{% static 'img/gallery/gallery(3).jpg' %}" class="icon--gallery image-popup d-flex justify-content-center align-items-center">
+                    <span class="fas fa-expand-alt"></span>
+                </a>
+        <div class="desc w-100 px-4">
+          <div class="text--gallery w-100 mb-3">
+              <span>Building</span>
+              <h2><a>CEH Building</a></h2>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 ftco-animate">
+    {# <div class="work--gallery img--gallery d-flex align-items-end" style="background-image: url('{% static img/gallery/gallery (4).jpg %}');"> #}
+        <a href="{% static 'img/gallery/gallery (4).jpg' %}" class="icon--gallery image-popup d-flex justify-content-center align-items-center">
+                    <span class="fas fa-expand-alt"></span>
+                </a>
+        <div class="desc w-100 px-4">
+          <div class="text--gallery w-100 mb-3">
+              <span>Building</span>
+              <h2><a>CEH Building</a></h2>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 ftco-animate">
+   {#  <div class="work--gallery img--gallery d-flex align-items-end" style="background-image: url(' {% static \' img/gallery/x.jpg \' %}');"> #}
+        <a href="{% static 'img/gallery/gallery (5).jpg' %}" class="icon--gallery image-popup d-flex justify-content-center align-items-center">
+                    <span class="fas fa-expand-alt"></span>
+                </a>
+        <div class="desc w-100 px-4">
+          <div class="text--gallery w-100 mb-3">
+              <span>Building</span>
+              <h2><a>CEH Building</a></h2>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div> 
+</section>
+-->

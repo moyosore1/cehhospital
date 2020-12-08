@@ -1,0 +1,364 @@
+  {% extends 'posts/base_template.html' %}
+  {% load static %}
+  {% block css %} <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">{% endblock css %}
+
+  {% load humanize %}
+
+  {% block content %}
+  <!--Carousel-->
+  <div id="carouselExampleIndicators" class="carousel slide section2 " data-ride="carousel">
+    <!--carousel Indicators-->
+    <ul class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ul>
+
+    <div class="carousel-inner">
+      <!--Carousel item 1-->
+      <div class="carousel-item active">
+        <img src="{% static 'img/team/team (3).jpg' %}" alt="">
+        <div class="container">
+          <div class="carousel-caption caption text-center">
+            <h1>We Provide excellent <br>services</h1>
+            <a class="btn  btn-lg" href="{% url 'login' %}">Sign in</a>
+            <a class="btn  btn-lg" href="{% url 'about' %}">About Us</a>
+          </div>
+        </div>
+      </div>
+      <!--Carousel item 2-->
+      <div class="carousel-item ">
+        <img src="{% static 'img/facilities/facilities (2).jpg' %}" alt="">
+         <div class="container">
+          <div class="carousel-caption caption text-center">
+            <h1>We Provide excellent <br>services</h1>
+            <a class="btn  btn-lg" href="{% url 'login' %}">Sign in</a>
+            <a class="btn  btn-lg" href="{% url 'about' %}">About Us</a>
+          </div>
+        </div>
+      </div>
+      <!--Carousel item 3-->
+      <div class="carousel-item ">
+        <img src="{% static 'img/facilities/facilities (5).jpg' %}" alt="">
+         <div class="container">
+          <div class="carousel-caption caption text-center">
+            <h1>We Provide excellent <br>services</h1>
+            <a class="btn  btn-lg" href="{% url 'login' %}">Sign in</a>
+            <a class="btn  btn-lg" href="{% url 'about' %}">About Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- End landing page section --> 
+
+
+
+  <!--Start services section-->
+  <div id="#" class="offset ">
+      <div class="jumbotron">
+         <div class="narrow text-center ">
+             <div class="row text-center">
+             
+              <div class="col-md-4 ftco-animate feature">
+                  <div class="">
+                      <i class="far fa-check-circle fa-2x nice"></i>
+                  </div>
+                  <h3 class="fadeInUp">Make an Appointment</h3>                  
+                  <p>
+                    <span><a href="#">Request an appointment using our secure online form.</a> Our goal is to contact you by phone within three business days to review your medical and financial information.</span>
+                  </p>
+              </div>
+          
+              <div class="col-md-4 ftco-animate feature">
+                  <div class="">
+                      <i class="fas fa-map-marker-alt fa-2x nice"></i>
+                  </div>
+                  <!-- why mot working <a href="contact.html#googleMap">Find Us</a> -->
+                  <h3  class="fadeInUp" >Find Us</h3>
+                  <p><span> Search our <a href="contact.html#googleMap">locations</a> to find the one nearest you.</span></p>
+              </div>
+          
+              <div class="col-md-4 ftco-animate feature">
+                  <div class="">
+                      <i class="fas fa-clipboard-list fa-2x nice"></i>
+                  </div>
+                  <h3 class="fadeInUp" >Get Diagnostics</h3>
+                  <p>  <span>Innovative approach for screening and early identification of eye diseases with great potential for causing visual impairment and blindness. <a href="diagnostics.html"> get diagnostics</a></span></p>
+              </div>
+             </div>
+         </div>
+
+      </div>
+  </div>
+  <!-- endStart services section-->
+
+
+  <!--resourse-->
+  <div id="#" class="offset ">
+
+      <div class="fixed-background">
+
+          <div class="row dark text-center">
+
+              <div class="col-12 ftco-animate">
+                  <h3 class="heading">Why Choose us </h3>
+                  <div class="heading-underline"></div>
+              </div>
+              
+              <div class="col-md-4 ftco-animate">
+                  <h3>
+                    More experience
+                  </h3>
+                  <p>
+                    Our highly specialized experts are deeply experienced in treating rare and complex conditions.</p>
+              </div>
+              
+              <div class="col-md-4 ftco-animate img--center">
+                  <h3>
+                      <img src="{% static 'img/logo.png' %}" class="img--center" alt="">
+                  </h3>
+              </div>
+
+              <div class="col-md-4 ftco-animate">
+                  <h3>
+                    The right answers
+                  </h3>
+                  <p>
+                  Successful treatment starts with an accurate diagnosis, and our experts take the time to get it right. A team of specialists will listen to your needs and evaluate your condition from every angle to make the very best plan for you.
+                  </p>
+              </div>
+              
+              <div class="col-md-4 col-bottom ftco-animate">
+                  <h3>
+                    Seamless care
+                  </h3>
+                  <p>
+                     At The Centre for Eye Health, every aspect of your eye care is coordinated and teams of experts work together to provide exactly the care you need.
+                  </p>
+              </div>
+             
+              <div class="col-md-4 ftco-animate">
+                
+              </div>
+
+              <div class="col-md-4 col-bottom ftco-animate">
+                  <h3>
+                    Unparalleled expertise
+                  </h3>
+                  <p>
+                    Centre for Eye Health experts are some of the best in the world. In the Nigeria, CEH is among the best in the nation.
+                  </p>
+              </div>
+
+            </div><!--end row dark-->
+
+          </div>
+      </div>
+  </div>
+  <!-- end resourse-->
+
+
+  <!--About -->
+  <section id="about " class="about-section ">
+        <div class="row d-flex no-gutters">
+            
+            <div class="col-md-6 about-pictures d-flex ftco-animate">
+                <img src="{% static 'img/building/building (16).jpg' %}" alt="" class="about-img">
+            </div>
+
+            <div class="col-md-6 pl-md-5 about-text">      
+              <div class="ftco-animate">
+                  <h3 class="subheading--about ">Centre for Innovations in Eye Care Health</h3>
+                  <h2 id="OurDeclaration">Our Declaration, Our Pact with Nigerians.</h2>
+                  <p>We shall not be limited by traditions. We shall breakdown existing barriers and bring modern technology to bear through our Centre for Innovations in Eye Care. </p>
+              </div>
+              
+              <div id="tab-mission&vision" class="tab--about">
+                <button class="tablinks--about" onclick="openCity(event, 'OurMission')"><a>Our Mission</a> </button>
+                <button class="tablinks--about" onclick="openCity(event, 'OurVision')"><a>Our Vision</a> </button>
+                <!-- <button class="tablinks--about" onclick="openCity(event, 'OurValues')"><a>Our Values</a> </button> -->
+              </div> 
+              
+              <div id="OurMission" class="tabcontent--about">
+                <p>A centre that will provide an uninterrupted qualitative, affordable, accessible and efficient eye care services for all who seek help with compassion and love irrespective of socio- economic status, race or creed; provide high quality clinical and surgical services for residency and short term fellowship training; deliver sustainable, comprehensive eye care services through promotive, curative and preventive eye care practice, and an alternative platform for training of eye care team that focuses not only on the cognitive and skill, but also an attitude, effective outreach programmes reaching out to the neglected and underprivileged people and operational research and innovation for the improvement of eye care in the country.</p>
+              </div>
+              
+              <div id="OurVision" class="tabcontent--about">
+                <p>Our Vision at Eleta Eye Institute Group 
+                  To become the leading and best eye care provider on the African continent that will demonstrate excellence in service, in training, in research and a strong commitment to innovation for the improvement of eye care for the benefit of humanity and the greater glory of God.</p> 
+              </div>   
+            </div>
+          </div>
+  </section>
+  <!-- end About -->
+
+
+  <!--reviews-->
+    <div class="section dark2 py-5 " id="reviews">
+      
+      <div class="container-fluid text-center">
+        <h2 class="team-bold text-black">Reviews</h2>
+        <p class="mb-1 text-info">Take a look at the reviews form our grateful patients</p>
+      </div>
+
+    <div id="slider" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+      <!--carousel item-->
+        <div class="carousel-item active">
+          <div class="container my-5">
+              <div class="row text-center">
+                  <div class=" col-12 review-item ">
+                      <!--image-->
+                      <div class="align-self-center ">
+                          <img src="{% static 'img/customers/customer (1).jpg' %}" alt="" class="rounded-circle review-img">
+                      </div>
+                      <!--text-->
+                      <div class="review-text ">
+                          <h2 class="textcapitalized mb-3 primary-color">David Adewole</h2>
+                          <h5>Brain surgeon</h5>
+                          <p class="">Even though the golden fish does not hide itself, there is the need for enough publicity of the hospital to other parts of the country. <br> 
+                            Wishing management and staff the very best! </p>  
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+        <!--end carousel item-->
+      <!--carousel item-->
+      <div class="carousel-item ">
+          <div class="container my-5">
+              <div class="row text-center">
+                  <div class="col-12 review-item ">
+                      <!--image-->
+                      <div class="align-self-center">
+                          <img src="{% static 'img/customers/customer (7).jpg' %}" alt="" class="rounded-circle review-img">
+                      </div>
+                      <!--text-->
+                      <div class="review-text ">
+                          <h2 class="textcapitalized mb-3 primary-color">S.M Okafo</h2>
+                          <h5>Fashion Designer</h5>
+                          <p class="">Just to let you know that I had my first restful night this week yesterday. I feel great and I am in the airport waiting for the flight back to Calabar. I hope to be back on the 2nd of April for stent removal. I cannot thank you enough for giving me a new lease on life. Please extend my thanks to your excellent medical team for their warm hospitality. Best regards. </p>  
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <!--end carousel item-->
+        <!--carousel item-->
+        <div class="carousel-item ">
+          <div class="container my-5">
+              <div class="row text-center">
+                  <div class="col-12 review-item ">
+                      <!--image-->
+                      <div class="align-self-center">
+                          <img src="{% static 'img/customers/customer (4).jpg' %}" alt="" class="rounded-circle review-img">
+                      </div>
+                      <!--text-->
+                      <div class="review-text ">
+                          <h2 class="textcapitalized mb-3 primary-color">A.Otu</h2>
+                          <h5>UI/UX, Designer</h5>
+                          <p class="">Dr, God Almighty bless you and all members of the Hospital Management.You are all so wonderful. We were discharged around 10.00PM. I am extremely delighted in the way and manner we were treated by all members of your staff, the security inclusive.We thank you and pray that you continue to excel to serve humanity for a very long time. </p>  
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!--end carousel item-->
+    
+    </div>
+    
+    <!--carousel controls-->
+      <a href="#slider" class="carousel-control-prev carousel__control--" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+      <a href="#slider" class="carousel-control-next carousel__control--next" role="button" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+    </div>
+  </div>
+<!--end reviews-->
+
+
+  <!--recent blog-->
+  <section class="recent-blog section" id="recent-blog">
+      <div class="container">
+        
+        <div class="row justify-content-center mb-2 pb-2">
+          <div class="col-md-7 heading-section--recent-blog text-center ftco-animate">
+              <span class="subheading--recent-blog">Our Blog</span>
+            <h2>Recent Blog</h2>
+          </div>
+        </div>
+        
+        <div class="row d-flex">
+            {% for post in posts %}
+              <div class="col-md-4 d-flex ftco-animate blog-blocks">
+                <div class="recent-blog-entry align-self-stretch">
+                  <a href="blog-diabetes.html" class="" ><img src="{{ post.post_image.url}}" alt="" class="rounded block-20--recent-blog "></a>'
+                  <div class="text--recent-blog mt-3 text-center">
+                    <div class="meta mb-2">
+                      <div><a href="#">{{ post.date_added|naturaltime}}</a></div>
+                      <div><a href="#" class="meta-chat"><span class="far fa-comment-dots"></span>{{post.get_number_of_comments}}</a></div>
+                    </div>
+                    <h3 class="heading--recent-blog"><a href="{{ post.get_absolute_url }}">{{ post.post_title}}</a></h3>
+                  </div>
+                </div> 
+              </div>       
+            {% endfor %}     
+
+        </div>
+      </div>
+    </section>
+  <!--end of recent blog-->
+
+
+
+  <!-- app -->
+  <section id="app" class="app-section section">
+    <div class="container">
+      <div class="row dflex">
+        <div class="col md-6 app-carousel">
+          <!-- partial:index.partial.html -->
+          <div class="carousel">
+            <ul class="carousel__list">
+              <img class="carousel__item" src="{% static 'img/app/app (2).jpg' %}" data-pos="-2" src="" alt="">
+              <img class="carousel__item" src="{% static 'img/app/app (1).jpg' %}" data-pos="-1" src="" alt="">
+              <img class="carousel__item" src="{% static 'img/app/app (2).jpg' %}" data-pos="0" src="" alt="">
+              <img class="carousel__item" src="{% static 'img/app/app (1).jpg' %}" data-pos="1" src="" alt="">
+              <img class="carousel__item" src="{% static 'img/app/app (2).jpg' %}" data-pos="2" src="" alt="">
+
+            </ul>
+          </div>
+
+  <!-- partial -->
+        </div>
+        <div class="col-md-6 app-text">
+          
+          <h1 class="app-title">
+              CEH App,
+              <br>
+              Reliable.
+          </h1>
+          
+          <div class="app-paragraph">
+            <p>
+              With the CEH app, you'll get fast, simple, tips and easy messaging and calling CEH Doctors for <span>free <sup>*</sup>, availiable for all phones </span>
+            </p>
+          </div>
+          
+          <div class="app-conditions">
+            <sup>*</sup>
+            Data Charges may apply. Contact your service provider for details.
+          </div>
+          
+          <div class="app-list">
+            <ul>
+              <li><a href="comingsoon.html"><img height="50%" width="50%" src="{% static 'img/google-play-badge.png' %}" alt=""></a> <a href="comingsoon.html"><img height="40%" width="40%"  src="{% static 'img/badge-download-on-the-app-store.svg'%}" alt=""></a></li>
+              <li></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end app -->
+  {% endblock %}

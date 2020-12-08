@@ -1,0 +1,92 @@
+{% extends 'posts/base_template.html' %}
+{% load static %}
+{% block css %} <link rel="stylesheet" type="text/css" href="{% static 'css/diagnostics.css' %}">{% endblock css %}
+
+
+
+
+{% block content %}
+    <!--landing-->
+    <div class="landing ftco-animate">
+      <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'Post-home' %}">Home <i class="fas fa-chevron-right"></i></a></span> <span>Diagnostics <i class="fas fa-chevron-right"></i></span></p>
+      <h1 class="bread">Diagnostics</h1>
+    </div>
+
+  <!--main body-->
+  <section>    
+    <div class="container-full ftco-animate">
+      <!-- Nav pills -->
+      <ul class="nav nav-pills justify-content-center" role="tablist">
+        <li class="nav-item"><a class="nav-link active" data-toggle="pill" href="#menu">Fill a form</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#menu1">Chat with a Doctor</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+      
+        <div id="menu" class="container tab-pane active"><br>
+          <!--Fill a form-->
+          <h4>Fill a Form</h4>
+          <p>We offer diagnostic and treatment options for common and complex medical conditions</p>
+
+          <form action="#">
+
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" class="inpt" placeholder="Surname first" id="name">
+
+              <label for="email">Email address:</label>
+              <input type="email" class="inpt" placeholder="" id="email">
+
+              <label for="phone">Phone number:</label>
+              <input type="tel" class="inpt" name="" value="+234" id="phone">
+
+              <label for="address">Home address (optional):</label>
+              <textarea rows="4" id="address"></textarea>
+
+            </div>
+
+            <h5>Services:</h5>
+
+            <div class="form-group">
+              
+              <input type="checkbox" class="check" name="services" value=""> Measurement of Visual Acuity<br>
+              <input type="checkbox" class="check" name="services" value=""> Colour Vision tests<br>
+              <input type="checkbox" class="check" name="services" value=""> Refraction<br>
+              <input type="checkbox" class="check" name="services" value=""> Dispensing of glasses<br>
+              <input type="checkbox" class="check" name="services" value=""> Dispensing of medications<br> 
+              <input type="checkbox" class="check" name="services" value=""> Contrast Sensitivity<br>
+              <input type="checkbox" class="check" name="services" value=""> Anterior Segment photography<br>
+              <input type="checkbox" class="check" name="services" value=""> Ocular Surface<br>
+              <input type="checkbox" class="check" name="services" value=""> Examination of posterior segment<br>
+              <input type="checkbox" class="check" name="services" value=""> Tonometry – Non-contact digital tonometry<br>
+              <input type="checkbox" class="check" name="services" value=""> Pachymetry<br>
+             
+            </div>
+
+            <label for="comment">Additional comments (if any):</label>
+            <textarea rows="5" id="comment"></textarea>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+          </form>
+        </div>
+
+            
+        <!--Chat with a doctor-->
+        <div id="menu1" class="container tab-pane"><br>
+          <h4>Chat with a Doctor</h4>
+          <p>We’re here to assist you before, during and after your visit to CEH. Find everything you need to make your visit as pleasant and comfortable as possible.</p>
+
+          <div class="alert alert-info alert-dismissible">
+            <strong>Info!</strong> This might take some time as we're trying to get a Doctor to chat with you.
+            <!--<button type="button" class="close" data-dismiss="alert">&times;</button>-->
+          </div>
+          
+        </div>
+
+      </div>
+    </div>
+  </section> 
+
+{% endblock %}

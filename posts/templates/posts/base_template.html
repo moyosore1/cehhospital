@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Center for Eye Health - {% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fixed.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/myForm.css' %}">
+    {% block css %} {% endblock css%}
+</head>
+<body>
+
+  
+  <!--home-->
+  <div id="home">   
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-light ">
+    	
+      <a class="navbar-brand" href="{% url 'Post-home' %}"><img src="{% static 'img/logo_new.png' %}"></a>
+    	
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    	</button>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+      
+        <ul class="navbar-nav ml-auto ">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'Post-home' %}">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{% url 'posts' %}">Blog</a>
+            </li>
+              <!--sign in-->
+              {% if request.user.is_authenticated %}
+                <li class="nav-item ">
+                   <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+                </li>
+              {% else %}
+                <li class="nav-item ">
+                  <a href="{% url 'login' %}" class="nav-link" >Sign In</a>
+                </li>
+                <li class="nav-item ">
+                  <a href="{% url 'register' %}" class="nav-link" >Sign Up</a>
+                </li>
+              {% endif %}
+              
+              {% if request.user.is_staff %}
+                <li class="nav-item ">
+                  <a href="/admin" class="nav-link" >Admin</a>
+                </li>
+                <li class="nav-item ">
+                  <a href="{% url 'send_newsletter' %}" class="nav-link" >Send NewsLetter</a>
+                </li>
+              {% endif %}
+          
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">services</a>
+                <div class="dropdown-menu arrow-top">
+                    <a class="dropdown-item" href="{% url 'diagnostics' %}">Diagnostics</a>
+                    <a class="dropdown-item" href="">Request an Appointment</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'Contact-us' %}">Contact</a>
+            </li>
+        </ul>
+        
+      </div>
+    	
+    </nav>
+
+  </div>
+  <!--end home-->
+
+  {% block content %}
+    {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+  {% endblock %}
+
+  <!--news letter-->
+  <section class="section newsletter">
+
+    <div class="row ftco-animate bg-primary">         
+        
+      <div class="col-md-6 ftco-animate">
+        <h2 class="mb-0">Subscribe to our Newsletter</h2>
+      </div>
+              
+      <div class="col-md-6">
+        <form action="{% url 'subscribe' %}" method="POST" class="subscribe-form ftco-animate">
+          {% csrf_token %}
+          <div class="form-group d-flex">
+            <input type="text" class="form-control--newsletter" placeholder="Enter Email Address" name="email">
+            <button type="submit" class="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  
+  </section>
+  <!--end of newsletter-->
+
+
+  <!--footer-->
+  <footer class="footer">
+    <div class="row ftco-animate">
+
+      <div class="col-md-5">
+        <h2 class="footer-heading">Center for Eye Health</h2>
+        <p>CEH is fully accredited by the
+            Center for Improvement in Healthcare Quality (CIHQ).</p>
+      
+        <ul class="ftco-footer-social p-0">
+            <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fab fa-twitter"></span></a></li>
+            <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fab fa-facebook"></span></a></li>
+            <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="fab fa-instagram"></span></a></li>
+      
+        </ul>
+      </div>
+      
+      <div class="col-md-7">
+          <div class="row justify-content-center">
+    
+            <div class="col-md-5 footer--list">
+              <h2 class="footer-heading">Services</h2>
+
+              <ul class="list-unstyled">
+                  <li><a href="{% url 'diagnostics' %}" class="py-1 d-block">Diagnostics</a></li>
+                  <li><a href="appointment.html" class="py-1 d-block">Appointment</a></li>
+                  <li><a href="{% url 'login' %}" class="py-1 d-block">Sign In</a></li>
+                  <li><a href="{% url 'register' %}" class="py-1 d-block" >Sign Up</a></li>
+              </ul>
+            </div>
+
+            <div class="col-md-5 mb-4 footer--list">
+              <h2 class="footer-heading">About</h2>
+              
+              <ul class="list-unstyled">
+                  <li><a href="{% url 'about'%}" class="py-1 d-block">Team</a></li>
+                  <li><a href="{% url 'posts' %}" class="py-1 d-block">Blog</a></li>
+              </ul>
+            </div> 
+
+          </div>
+      </div>
+
+      <div class="col-md-12 pb-0">
+        <p class="copyright"> Copyright &copy;All rights reserved | 
+          <a href="{% url 'Post-home'%}" target="_blank">Center for Eye Health</a>
+          <i class="fa " aria-hidden="true"></i> Made by 
+          <a href="https://instagram.com/offset.tech?igshid=1ljev5mgi8fon" target="_blank">Offset tech</a>
+        </p>
+      </div>
+  
+    </div>
+  </footer>
+  <!--end of footer-->
+
+
+ 
+   <!--Script files-->
+   <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+   <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+   <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+   <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+   <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+   <script src="{% static 'js/main.js' %}"></script>
+   <script src="{% static 'js/myForm.js' %}"></script>
+   <script src="{% static 'js/gallery-about.js' %}"></script>
+   <script src="https://kit.fontawesome.com/68a4e35013.js" crossorigin="anonymous"></script>
+   <script src="https://maps.googleapis.com/maps/api/js?AIzaSyCAEu3OQAOOzzXn-lvdenR9JnaWjBYMpEg&callback=myMap"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <!--End Script files -->
+</body>
+</html>

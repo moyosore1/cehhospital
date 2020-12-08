@@ -1,0 +1,97 @@
+
+/* contact */
+.wrapper {
+  width: 100%;
+}
+
+.contact{
+    margin-top: 4rem;
+}
+
+.contact-wrap {
+    background: #e8edf0;
+}
+
+.contactForm .label {
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.contactForm .form-control {
+    border: none;
+}
+
+.opening-hours{
+    padding-left: 3rem;
+    /* background: #e8edf0; */
+    margin-left: 1rem;
+
+}
+
+.opening-hours h3{
+    font-family: serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: #3DBFF0;
+}
+
+.opening-hours p{
+    padding-left: 0;
+    font-size: 1.2rem;
+}
+  
+  /* 
+  .opening-hours ul i{
+    
+  }
+  .opening-hours ul li{
+  
+  }
+  
+  .span-1{
+    text-align: right;
+    padding-left: 12rem;
+  }
+  */
+  .map-section {
+    width:100%; 
+    height:18rem;
+    padding: 2rem 4rem;
+    margin-top: -2rem;
+  }
+  
+@media screen and (max-width: 767px){
+      
+    .contact{
+        margin-top: 1.5rem;
+    }
+
+    .opening-hours p{
+      padding-left: 0;
+      font-size: 1rem;
+    }
+   
+    .opening-hours h3{
+      font-size: 2.2rem;
+    }
+  
+    .contactForm .form-control {
+       width: 100%;
+    }
+
+    .map-section {
+        height:15rem;
+        padding: 2rem;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .map-section {
+        margin-top: -3rem;
+        padding: 1.5rem;
+    }
+}

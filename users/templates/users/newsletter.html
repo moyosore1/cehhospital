@@ -1,0 +1,17 @@
+{% extends 'posts/base_template.html' %}
+{% block content %}
+	
+	<form method="POST" style="margin-top: 120px">
+		{% csrf_token %}
+		<div class="form-group">
+		    <label for="subject">Subject</label>
+		    <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
+		  </div>
+		  <div class="form-group">
+		    <label for="body">Body</label>
+		    <textarea class="form-control" id="body" rows="10" name="body"></textarea>
+		  </div>
+		  <button type="submit" class="btn btn-primary">Send Mass Email</button>  
+	</form>	
+
+{% endblock %}

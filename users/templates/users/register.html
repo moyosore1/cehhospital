@@ -1,0 +1,20 @@
+{% extends 'posts/base_template.html' %}
+{% load static %}
+{% block css %} <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">{% endblock css %}
+
+{% block title %} Register{% endblock title %}
+
+{% block content %}
+    <section class="login">     
+
+        <h3>Register</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p}}
+          <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+
+      </section>
+{% endblock content %}
+
+

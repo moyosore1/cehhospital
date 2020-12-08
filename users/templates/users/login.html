@@ -1,0 +1,27 @@
+{% extends 'posts/base_template.html' %}
+{% load static %}
+{% block css %} <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">{% endblock css %}
+
+{% block title %} Login {% endblock title %}
+
+{% block content %}
+  <section class="login">
+        <h3>Login</h3>
+        <form method="POST">
+            {% csrf_token %}
+              <div class="form-group">
+                <input type="text" class="inpt" id="username" name="username" placeholder="Username" aria-describedby="emailHelp">
+
+              </div>
+              <div class="form-group">
+                <input type="password" class="inpt" id="password" name="password" placeholder="Password">
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+  
+  </section>
+
+{% endblock content %}
+
+
